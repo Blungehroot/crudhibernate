@@ -1,3 +1,4 @@
+/*
 package com.crudhibernate.app.controller;
 
 
@@ -83,3 +84,4 @@ public class WriterController {
         writerService.deleteById(id);
     }
 }
+*/

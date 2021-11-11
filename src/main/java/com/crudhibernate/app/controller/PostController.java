@@ -1,3 +1,4 @@
+/*
 package com.crudhibernate.app.controller;
 
 
@@ -84,3 +85,4 @@ public class PostController {
         postService.deleteById(id);
     }
 }
+*/

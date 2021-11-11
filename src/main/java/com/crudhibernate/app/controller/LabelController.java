@@ -1,3 +1,4 @@
+/*
 package com.crudhibernate.app.controller;
 
 
@@ -59,3 +60,4 @@ public class LabelController {
         labelService.deleteById(id);
     }
 }
+*/
