@@ -1,6 +1,7 @@
 package com.crudhibernate.app.service;
 
-import com.crudjdbc.app.model.Label;
+
+import com.crudhibernate.app.model.Label;
 
 import java.util.List;
 

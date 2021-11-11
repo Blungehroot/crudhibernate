@@ -1,7 +1,7 @@
 package com.crudhibernate.app.view;
 
 
-import com.crudjdbc.app.controller.PostController;
+import com.crudhibernate.app.controller.PostController;
 
 import java.util.Scanner;
 

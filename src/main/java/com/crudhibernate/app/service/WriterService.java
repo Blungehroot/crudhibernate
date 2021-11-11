@@ -1,6 +1,7 @@
 package com.crudhibernate.app.service;
 
-import com.crudjdbc.app.model.Writer;
+
+import com.crudhibernate.app.model.Writer;
 
 import java.util.List;
 

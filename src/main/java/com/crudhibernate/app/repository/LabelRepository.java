@@ -1,7 +1,7 @@
 package com.crudhibernate.app.repository;
 
 
-import com.crudjdbc.app.model.Label;
+import com.crudhibernate.app.model.Label;
 
-public interface LabelRepository extends com.crudjdbc.app.repository.GenericRepository<Label, Integer> {
+public interface LabelRepository extends GenericRepository<Label, Integer> {
 }

@@ -1,11 +1,11 @@
 package com.crudhibernate.app.controller;
 
-import com.crudjdbc.app.model.Post;
-import com.crudjdbc.app.model.Writer;
-import com.crudjdbc.app.service.*;
-import com.crudjdbc.app.service.serviceimpl.LabelServiceImpl;
-import com.crudjdbc.app.service.serviceimpl.PostServiceImpl;
-import com.crudjdbc.app.service.serviceimpl.WriterServiceImpl;
+
+import com.crudhibernate.app.model.Post;
+import com.crudhibernate.app.model.Writer;
+import com.crudhibernate.app.service.LabelService;
+import com.crudhibernate.app.service.PostService;
+import com.crudhibernate.app.service.WriterService;
 
 import java.util.Arrays;
 import java.util.List;

@@ -1,7 +1,7 @@
 package com.crudhibernate.app.repository;
 
 
-import com.crudjdbc.app.model.Post;
+import com.crudhibernate.app.model.Post;
 
-public interface PostRepository extends com.crudjdbc.app.repository.GenericRepository<Post, Integer> {
+public interface PostRepository extends GenericRepository<Post, Integer> {
 }

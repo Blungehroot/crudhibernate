@@ -1,7 +1,7 @@
 package com.crudhibernate.app.view;
 
 
-import com.crudjdbc.app.controller.LabelController;
+import com.crudhibernate.app.controller.LabelController;
 
 import java.util.Scanner;
 
