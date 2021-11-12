@@ -12,8 +12,7 @@ import java.io.Serializable;
 @RequiredArgsConstructor
 public class Label implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "label_seq")
-    @SequenceGenerator(name = "label_seq", sequenceName = "label_seq")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column

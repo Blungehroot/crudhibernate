@@ -13,8 +13,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class Writer implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "writer_seq")
-    @SequenceGenerator(name = "writer_seq", sequenceName = "writer_seq")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column

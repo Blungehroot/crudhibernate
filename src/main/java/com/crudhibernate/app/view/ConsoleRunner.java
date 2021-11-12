@@ -1,3 +1,4 @@
+/*
 package com.crudhibernate.app.view;
 
 
@@ -25,8 +26,10 @@ public class ConsoleRunner {
         PostController postController = new PostController();
         postView = new PostView(postController, sc);
 
-        /*WriterController writerController = new WriterController();
-        writerView = new WriterView(writerController, sc);*/
+        */
+/*WriterController writerController = new WriterController();
+        writerView = new WriterView(writerController, sc);*//*
+
     }
 
     public void run() {
@@ -60,3 +63,4 @@ public class ConsoleRunner {
         sc.close();
     }
 }
+*/
