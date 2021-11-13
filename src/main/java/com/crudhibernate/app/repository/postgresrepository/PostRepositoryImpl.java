@@ -10,7 +10,6 @@ import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-import javax.transaction.Transactional;
 import java.util.List;
 
 public class PostRepositoryImpl implements PostRepository {
@@ -58,7 +57,6 @@ public class PostRepositoryImpl implements PostRepository {
     }
 
     @Override
-    @Transactional
     public void deleteById(Integer id) {
         session = sessionFactory.openSession();
         session.beginTransaction();
