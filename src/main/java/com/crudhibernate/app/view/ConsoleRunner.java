@@ -1,16 +1,16 @@
-/*
 package com.crudhibernate.app.view;
 
 
 import com.crudhibernate.app.controller.LabelController;
 import com.crudhibernate.app.controller.PostController;
+import com.crudhibernate.app.controller.WriterController;
 
 import java.util.Scanner;
 
 public class ConsoleRunner {
     private final LabelView labelView;
     private final PostView postView;
-    //private final WriterView writerView;
+    private final WriterView writerView;
 
     private Scanner sc = new Scanner(System.in);
     private static final String msg = "Select action:\n" +
@@ -26,9 +26,9 @@ public class ConsoleRunner {
         PostController postController = new PostController();
         postView = new PostView(postController, sc);
 
-        */
-/*WriterController writerController = new WriterController();
-        writerView = new WriterView(writerController, sc);*//*
+
+        WriterController writerController = new WriterController();
+        writerView = new WriterView(writerController, sc);
 
     }
 
@@ -47,7 +47,7 @@ public class ConsoleRunner {
                     System.out.println(msg);
                     break;
                 case "3":
-                    //writerView.show();
+                    writerView.show();
                     System.out.println(msg);
                     break;
                 case "4":
@@ -63,4 +63,3 @@ public class ConsoleRunner {
         sc.close();
     }
 }
-*/

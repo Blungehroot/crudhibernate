@@ -1,4 +1,3 @@
-/*
 package com.crudhibernate.app.controller;
 
 
@@ -6,6 +5,8 @@ import com.crudhibernate.app.model.Label;
 import com.crudhibernate.app.model.Post;
 import com.crudhibernate.app.service.LabelService;
 import com.crudhibernate.app.service.PostService;
+import com.crudhibernate.app.service.serviceimpl.LabelServiceImpl;
+import com.crudhibernate.app.service.serviceimpl.PostServiceImpl;
 
 import java.util.Arrays;
 import java.util.List;
@@ -85,4 +86,3 @@ public class PostController {
         postService.deleteById(id);
     }
 }
-*/

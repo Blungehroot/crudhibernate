@@ -1,9 +1,9 @@
-/*
 package com.crudhibernate.app.controller;
 
 
 import com.crudhibernate.app.model.Label;
 import com.crudhibernate.app.service.LabelService;
+import com.crudhibernate.app.service.serviceimpl.LabelServiceImpl;
 
 import java.util.List;
 
@@ -60,4 +60,3 @@ public class LabelController {
         labelService.deleteById(id);
     }
 }
-*/

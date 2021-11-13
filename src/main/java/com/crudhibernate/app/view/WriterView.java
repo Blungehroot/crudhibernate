@@ -1,4 +1,3 @@
-/*
 package com.crudhibernate.app.view;
 
 
@@ -110,4 +109,3 @@ public class WriterView {
         }
     }
 }
-*/
