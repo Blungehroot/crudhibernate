@@ -15,4 +15,4 @@ cache:
 script:
   - java --version
   - docker-compose up
-  - mvn clean install test
+  - mvn clean package install test
