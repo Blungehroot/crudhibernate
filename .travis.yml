@@ -4,9 +4,9 @@ env:
 
 before_install:
   - sudo rm /usr/local/bin/docker-compose
-    - curl -Lо https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`blungehroot -s`-`blungehroot -m` > docker-compose
-    - chmod +x docker-compose
-    - sudo mv docker-compose /usr/local/bin
+  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`blungehroot -s`-`blungehroot -m` > docker-compose
+  - chmod +x docker-compose
+  - sudo mv docker-compose /usr/local/bin
 
 cache:
   directories:
@@ -17,6 +17,3 @@ script:
   - ./mvnw clean install
   - ./mvnw test
   - docker-compose up
-
-services:
-  - postgresql
