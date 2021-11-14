@@ -1,5 +1,8 @@
 language: java
 
+before_script:
+  - psql -c 'create database crudhibernate' -U postgres
+
 cache:
   directories:
     - $HOME/.m2
@@ -8,3 +11,6 @@ script:
   - java --version
   - ./mvnw clean install
   - ./mvnw test
+
+services:
+  - postgresql
