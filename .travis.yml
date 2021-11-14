@@ -14,6 +14,5 @@ cache:
 
 script:
   - java --version
-  - ./mvnw clean install
-  - ./mvnw test
   - docker-compose up
+  - mvn clean install test
