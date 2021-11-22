@@ -13,6 +13,10 @@ public class WriterServiceImpl implements WriterService {
         this.writerRepositoryImpl = new WriterRepositoryImpl();
     }
 
+    public WriterServiceImpl(WriterRepositoryImpl writerRepositoryImpl) {
+        this.writerRepositoryImpl = writerRepositoryImpl;
+    }
+
     @Override
     public Writer getById(int id) {
         return writerRepositoryImpl.getById(id);

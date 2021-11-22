@@ -13,6 +13,10 @@ public class PostServiceImpl implements PostService {
         this.postRepositoryImpl = new PostRepositoryImpl();
     }
 
+    public PostServiceImpl(PostRepositoryImpl postRepositoryImpl) {
+        this.postRepositoryImpl = postRepositoryImpl;
+    }
+
     @Override
     public Post getById(int id) {
         return postRepositoryImpl.getById(id);

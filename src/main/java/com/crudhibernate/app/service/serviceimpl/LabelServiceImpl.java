@@ -13,6 +13,10 @@ public class LabelServiceImpl implements LabelService {
         this.labelRepositoryImpl = new LabelRepositoryImpl();
     }
 
+    public LabelServiceImpl(LabelRepositoryImpl labelRepositoryImpl) {
+        this.labelRepositoryImpl = labelRepositoryImpl;
+    }
+
     @Override
     public Label getById(int id) {
         return labelRepositoryImpl.getById(id);
