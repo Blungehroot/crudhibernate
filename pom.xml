@@ -11,7 +11,7 @@
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <lombok.version>1.18.16</lombok.version>
+        <lombok.version>1.18.22</lombok.version>
         <maven.jar.plugin>3.2.0</maven.jar.plugin>
         <junit.version>5.5.2</junit.version>
         <mockito.core>4.0.0</mockito.core>
