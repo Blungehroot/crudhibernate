@@ -1,7 +1,7 @@
 import com.crudhibernate.app.model.Label;
 import com.crudhibernate.app.model.Post;
 import com.crudhibernate.app.model.Writer;
-import com.crudhibernate.app.repository.WriterRepository;
+import com.crudhibernate.app.repository.postgresrepository.WriterRepositoryImpl;
 import com.crudhibernate.app.service.serviceimpl.WriterServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -18,12 +18,11 @@ import static org.mockito.Mockito.*;
 @ExtendWith(MockitoExtension.class)
 public class WriterServiceTest {
 
+    @Mock
+    private WriterRepositoryImpl writerRepository;
+
     @InjectMocks
     private WriterServiceImpl writerService;
-
-    @Mock
-    private WriterRepository writerRepository;
-
 
     @Test
     void saveWriter_shouldBeSuccess() {
@@ -48,7 +47,7 @@ public class WriterServiceTest {
 
         when(writerRepository.save(writer)).thenReturn(writer);
 
-        Writer writerActual = writerRepository.save(writer);
+        Writer writerActual = writerService.save(writer);
 
         assertNotNull(writerActual);
         assertEquals(writer, writerActual);
@@ -79,7 +78,7 @@ public class WriterServiceTest {
 
         doNothing().when(writerRepository).deleteById(writer.getId());
 
-        writerRepository.deleteById(post.getId());
+        writerService.deleteById(post.getId());
 
         verify(writerRepository).deleteById(writer.getId());
     }
@@ -113,7 +112,7 @@ public class WriterServiceTest {
         lenient().when(writerRepository.save(writerExist)).thenReturn(writerExist);
         lenient().when(writerRepository.update(writerUpdated)).thenReturn(writerUpdated);
 
-        Writer result = writerRepository.update(writerUpdated);
+        Writer result = writerService.update(writerUpdated);
 
         assertNotNull(result);
         assertNotEquals(writerExist.getName(), result.getName());
@@ -144,7 +143,7 @@ public class WriterServiceTest {
 
         when(writerRepository.getById(writer.getId())).thenReturn(writer);
 
-        Writer result = writerRepository.getById(writer.getId());
+        Writer result = writerService.getById(writer.getId());
 
         assertNotNull(result);
         assertEquals(writer, result);
@@ -177,7 +176,7 @@ public class WriterServiceTest {
 
         when(writerRepository.getAll()).thenReturn(writers);
 
-        assertEquals(writers, writerRepository.getAll());
+        assertEquals(writers, writerService.getAll());
 
         verify(writerRepository).getAll();
     }

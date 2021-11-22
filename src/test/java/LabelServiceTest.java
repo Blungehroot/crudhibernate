@@ -21,7 +21,7 @@ public class LabelServiceTest {
     private LabelRepositoryImpl labelRepository;
 
     @InjectMocks
-    private LabelServiceImpl labelServiceImpl;
+    private LabelServiceImpl labelService;
 
     @Test
     void saveLabel_shouldBeSuccess() {
@@ -31,7 +31,7 @@ public class LabelServiceTest {
 
         when(labelRepository.save(label)).thenReturn(label);
 
-        Label labelActual = labelServiceImpl.save(label);
+        Label labelActual = labelService.save(label);
 
         assertNotNull(labelActual);
         assertEquals(label, labelActual);
@@ -47,7 +47,7 @@ public class LabelServiceTest {
 
         doNothing().when(labelRepository).deleteById(label.getId());
 
-        labelRepository.deleteById(label.getId());
+        labelService.deleteById(label.getId());
 
         verify(labelRepository).deleteById(label.getId());
     }
@@ -66,7 +66,7 @@ public class LabelServiceTest {
         lenient().when(labelRepository.save(labelExist)).thenReturn(labelExist);
         lenient().when(labelRepository.update(labelUpdated)).thenReturn(labelUpdated);
 
-        Label result = labelRepository.update(labelUpdated);
+        Label result = labelService.update(labelUpdated);
 
         assertNotNull(result);
         assertNotEquals(labelExist.getName(), result.getName());
@@ -82,7 +82,7 @@ public class LabelServiceTest {
 
         when(labelRepository.getById(label.getId())).thenReturn(label);
 
-        Label result = labelRepository.getById(label.getId());
+        Label result = labelService.getById(label.getId());
 
         assertNotNull(result);
         assertEquals(label, result);
@@ -101,7 +101,7 @@ public class LabelServiceTest {
 
         when(labelRepository.getAll()).thenReturn(labels);
 
-        assertEquals(labels, labelRepository.getAll());
+        assertEquals(labels, labelService.getAll());
 
         verify(labelRepository).getAll();
     }

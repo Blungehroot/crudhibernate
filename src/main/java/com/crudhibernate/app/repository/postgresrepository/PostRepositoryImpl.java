@@ -13,8 +13,12 @@ import javax.persistence.criteria.Root;
 import java.util.List;
 
 public class PostRepositoryImpl implements PostRepository {
-    private static SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+    private static SessionFactory sessionFactory;
     private static Session session;
+
+    public PostRepositoryImpl() {
+        sessionFactory = HibernateUtil.getSessionFactory();
+    }
 
     @Override
     public Post getById(Integer id) {

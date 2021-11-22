@@ -14,8 +14,12 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 public class LabelRepositoryImpl implements LabelRepository {
-    private static SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+    private static SessionFactory sessionFactory;
     private static Session session;
+
+    public LabelRepositoryImpl() {
+        sessionFactory = HibernateUtil.createSessionFactory();
+    }
 
     @Override
     public Label getById(Integer id) {

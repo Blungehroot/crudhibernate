@@ -13,8 +13,12 @@ import javax.persistence.criteria.Root;
 import java.util.List;
 
 public class WriterRepositoryImpl implements WriterRepository {
-    private static SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+    private static SessionFactory sessionFactory;
     private static Session session;
+
+    public WriterRepositoryImpl() {
+        sessionFactory = HibernateUtil.getSessionFactory();
+    }
 
     @Override
     public Writer getById(Integer id) {

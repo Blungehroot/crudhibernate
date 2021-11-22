@@ -1,6 +1,6 @@
 import com.crudhibernate.app.model.Label;
 import com.crudhibernate.app.model.Post;
-import com.crudhibernate.app.repository.PostRepository;
+import com.crudhibernate.app.repository.postgresrepository.PostRepositoryImpl;
 import com.crudhibernate.app.service.serviceimpl.PostServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -17,11 +17,11 @@ import static org.mockito.Mockito.*;
 @ExtendWith(MockitoExtension.class)
 public class PostServiceTest {
 
+    @Mock
+    private PostRepositoryImpl postRepository;
+
     @InjectMocks
     private PostServiceImpl postServiceImpl;
-
-    @Mock
-    private PostRepository postRepository;
 
     @Test
     void savePost_shouldBeSuccess() {
@@ -41,7 +41,7 @@ public class PostServiceTest {
 
         when(postRepository.save(post)).thenReturn(post);
 
-        Post postActual = postRepository.save(post);
+        Post postActual = postServiceImpl.save(post);
 
         assertNotNull(postActual);
         assertEquals(post, postActual);
@@ -59,7 +59,7 @@ public class PostServiceTest {
 
         doNothing().when(postRepository).deleteById(post.getId());
 
-        postRepository.deleteById(post.getId());
+        postServiceImpl.deleteById(post.getId());
 
         verify(postRepository).deleteById(post.getId());
     }
@@ -88,7 +88,7 @@ public class PostServiceTest {
         lenient().when(postRepository.save(postExist)).thenReturn(postExist);
         lenient().when(postRepository.update(postUpdated)).thenReturn(postUpdated);
 
-        Post result = postRepository.update(postUpdated);
+        Post result = postServiceImpl.update(postUpdated);
 
         assertNotNull(result);
         assertNotEquals(postExist.getName(), result.getName());
@@ -114,7 +114,7 @@ public class PostServiceTest {
 
         when(postRepository.getById(post.getId())).thenReturn(post);
 
-        Post result = postRepository.getById(post.getId());
+        Post result = postServiceImpl.getById(post.getId());
 
         assertNotNull(result);
         assertEquals(post, result);
@@ -143,7 +143,7 @@ public class PostServiceTest {
 
         when(postRepository.getAll()).thenReturn(posts);
 
-        assertEquals(posts, postRepository.getAll());
+        assertEquals(posts, postServiceImpl.getAll());
 
         verify(postRepository).getAll();
     }
