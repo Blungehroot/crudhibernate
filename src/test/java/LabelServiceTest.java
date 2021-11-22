@@ -1,5 +1,5 @@
 import com.crudhibernate.app.model.Label;
-import com.crudhibernate.app.repository.postgresrepository.LabelRepositoryImpl;
+import com.crudhibernate.app.repository.LabelRepository;
 import com.crudhibernate.app.service.serviceimpl.LabelServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -21,13 +21,15 @@ public class LabelServiceTest {
     private LabelServiceImpl labelServiceImpl;
 
     @Mock
-    private LabelRepositoryImpl labelRepository;
+    private LabelRepository labelRepository;
 
     @Test
     void saveLabel_shouldBeSuccess() {
         Label label = new Label();
         label.setId(1);
         label.setName("Test label");
+
+        labelServiceImpl = new LabelServiceImpl(labelRepository);
 
         when(labelRepository.save(label)).thenReturn(label);
 
