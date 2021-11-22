@@ -40,7 +40,7 @@ public class PostRepositoryImpl implements PostRepository {
         session.beginTransaction();
         session.save(post);
         session.getTransaction().commit();
-        sessionFactory.close();
+        session.close();
 
         return post;
     }
@@ -51,7 +51,7 @@ public class PostRepositoryImpl implements PostRepository {
         session.beginTransaction();
         session.update(post);
         session.getTransaction().commit();
-        sessionFactory.close();
+        session.close();
 
         return post;
     }

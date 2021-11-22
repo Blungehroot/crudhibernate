@@ -41,7 +41,7 @@ public class LabelRepositoryImpl implements LabelRepository {
         session.beginTransaction();
         session.save(label);
         session.getTransaction().commit();
-        sessionFactory.close();
+        session.close();
 
         return label;
     }
@@ -52,7 +52,7 @@ public class LabelRepositoryImpl implements LabelRepository {
         session.beginTransaction();
         session.update(label);
         session.getTransaction().commit();
-        sessionFactory.close();
+        session.close();
 
         return label;
     }

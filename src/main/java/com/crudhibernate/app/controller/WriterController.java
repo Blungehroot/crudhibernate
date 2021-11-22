@@ -3,10 +3,8 @@ package com.crudhibernate.app.controller;
 
 import com.crudhibernate.app.model.Post;
 import com.crudhibernate.app.model.Writer;
-import com.crudhibernate.app.service.LabelService;
 import com.crudhibernate.app.service.PostService;
 import com.crudhibernate.app.service.WriterService;
-import com.crudhibernate.app.service.serviceimpl.LabelServiceImpl;
 import com.crudhibernate.app.service.serviceimpl.PostServiceImpl;
 import com.crudhibernate.app.service.serviceimpl.WriterServiceImpl;
 
@@ -17,12 +15,10 @@ import java.util.stream.Collectors;
 public class WriterController {
     private final WriterService writerService;
     private final PostService postService;
-    private final LabelService labelService;
 
     public WriterController() {
         writerService = new WriterServiceImpl();
         postService = new PostServiceImpl();
-        labelService = new LabelServiceImpl();
     }
 
     private List<Post> getListPostsById(String ids) {

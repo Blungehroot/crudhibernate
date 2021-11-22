@@ -1,5 +1,5 @@
 import com.crudhibernate.app.model.Label;
-import com.crudhibernate.app.repository.LabelRepository;
+import com.crudhibernate.app.repository.postgresrepository.LabelRepositoryImpl;
 import com.crudhibernate.app.service.serviceimpl.LabelServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -17,11 +17,11 @@ import static org.mockito.Mockito.*;
 @ExtendWith(MockitoExtension.class)
 public class LabelServiceTest {
 
+    @Mock
+    private LabelRepositoryImpl labelRepository;
+
     @InjectMocks
     private LabelServiceImpl labelServiceImpl;
-
-    @Mock
-    private LabelRepository labelRepository;
 
     @Test
     void saveLabel_shouldBeSuccess() {
@@ -29,13 +29,11 @@ public class LabelServiceTest {
         label.setId(1);
         label.setName("Test label");
 
-        labelServiceImpl = new LabelServiceImpl(labelRepository);
-
         when(labelRepository.save(label)).thenReturn(label);
 
-        Label labelActual = labelRepository.save(label);
+        Label labelActual = labelServiceImpl.save(label);
 
-        assertNotNull(label);
+        assertNotNull(labelActual);
         assertEquals(label, labelActual);
 
         verify(labelRepository).save(ArgumentMatchers.eq(label));
