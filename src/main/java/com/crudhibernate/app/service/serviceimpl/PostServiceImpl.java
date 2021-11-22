@@ -8,7 +8,16 @@ import com.crudhibernate.app.service.PostService;
 import java.util.List;
 
 public class PostServiceImpl implements PostService {
-    private PostRepository postRepository = new PostRepositoryImpl();
+    private PostRepositoryImpl postRepositoryImpl;
+    private PostRepository postRepository;
+
+    public PostServiceImpl() {
+        this.postRepositoryImpl = new PostRepositoryImpl();
+    }
+
+    public PostServiceImpl(PostRepository postRepository) {
+        this.postRepository = postRepository;
+    }
 
     @Override
     public Post getById(int id) {

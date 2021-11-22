@@ -1,9 +1,7 @@
 import com.crudhibernate.app.model.Label;
 import com.crudhibernate.app.model.Post;
 import com.crudhibernate.app.model.Writer;
-import com.crudhibernate.app.repository.postgresrepository.LabelRepositoryImpl;
-import com.crudhibernate.app.repository.postgresrepository.PostRepositoryImpl;
-import com.crudhibernate.app.repository.postgresrepository.WriterRepositoryImpl;
+import com.crudhibernate.app.repository.WriterRepository;
 import com.crudhibernate.app.service.serviceimpl.WriterServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -24,13 +22,8 @@ public class WriterServiceTest {
     private WriterServiceImpl writerService;
 
     @Mock
-    private WriterRepositoryImpl writerRepository;
+    private WriterRepository writerRepository;
 
-    @Mock
-    private LabelRepositoryImpl labelRepository;
-
-    @Mock
-    private PostRepositoryImpl postRepository;
 
     @Test
     void saveWriter_shouldBeSuccess() {

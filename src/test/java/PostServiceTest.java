@@ -1,7 +1,6 @@
 import com.crudhibernate.app.model.Label;
 import com.crudhibernate.app.model.Post;
-import com.crudhibernate.app.repository.postgresrepository.LabelRepositoryImpl;
-import com.crudhibernate.app.repository.postgresrepository.PostRepositoryImpl;
+import com.crudhibernate.app.repository.PostRepository;
 import com.crudhibernate.app.service.serviceimpl.PostServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -19,13 +18,10 @@ import static org.mockito.Mockito.*;
 public class PostServiceTest {
 
     @InjectMocks
-    private PostServiceImpl postService;
+    private PostServiceImpl postServiceImpl;
 
     @Mock
-    private LabelRepositoryImpl labelRepository;
-
-    @Mock
-    private PostRepositoryImpl postRepository;
+    private PostRepository postRepository;
 
     @Test
     void savePost_shouldBeSuccess() {

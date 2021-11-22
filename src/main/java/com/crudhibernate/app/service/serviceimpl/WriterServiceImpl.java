@@ -8,7 +8,16 @@ import com.crudhibernate.app.service.WriterService;
 import java.util.List;
 
 public class WriterServiceImpl implements WriterService {
-    private WriterRepository writerRepository = new WriterRepositoryImpl();
+    private WriterRepositoryImpl writerRepositoryImpl;
+    private WriterRepository writerRepository;
+
+    public WriterServiceImpl() {
+        this.writerRepositoryImpl = new WriterRepositoryImpl();
+    }
+
+    public WriterServiceImpl(WriterRepository writerRepository) {
+        this.writerRepository = writerRepository;
+    }
 
     @Override
     public Writer getById(int id) {
