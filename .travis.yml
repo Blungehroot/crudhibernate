@@ -19,7 +19,7 @@ cache:
     - $HOME/.m2
 
 script:
-  - mvn clean package test -B
+  - mvn install -DskipTests=false -Dmaven.javadoc.skip=false -B -V
 
 after_script:
   - docker-compose down
