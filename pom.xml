@@ -56,7 +56,7 @@
                         <location>./resources/db/migration</location>
                     </locations>
                 </configuration>
-                <executions>
+                <!--<executions>
                     <execution>
                         <id>flyway database migration</id>
                         <phase>pre-integration-test</phase>
@@ -67,7 +67,7 @@
                             <goal>info</goal>
                         </goals>
                     </execution>
-                </executions>
+                </executions>-->
             </plugin>
         </plugins>
     </build>
