@@ -2,11 +2,15 @@ language: java
 env:
   DOCKER_COMPOSE_VERSION: 1.29.2
 
+services:
+  - postgresql
+
 before_install:
   - sudo rm /usr/local/bin/docker-compose
   - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`blungehroot -s`-`blungehroot -m` > docker-compose
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
+  - psql -U postgres < ./sql/create_tables.sql
 
 before_script:
   - docker-compose up -d --build
