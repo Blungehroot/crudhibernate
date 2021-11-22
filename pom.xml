@@ -21,7 +21,7 @@
         <database.driver>org.postgresql.Driver</database.driver>
         <database.url>jdbc:postgresql://localhost:5438/crudhibernate</database.url>
         <database.username>postgres</database.username>
-        <database.password></database.password>
+        <database.password>postgres</database.password>
     </properties>
 
     <build>
