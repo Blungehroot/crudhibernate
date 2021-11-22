@@ -1,14 +1,19 @@
 package com.crudhibernate.app.service.serviceimpl;
 
 import com.crudhibernate.app.model.Label;
-import com.crudhibernate.app.repository.LabelRepository;
 import com.crudhibernate.app.repository.postgresrepository.LabelRepositoryImpl;
 import com.crudhibernate.app.service.LabelService;
 
 import java.util.List;
 
 public class LabelServiceImpl implements LabelService {
-    private LabelRepository labelRepository = new LabelRepositoryImpl();
+    private LabelRepositoryImpl labelRepository;
+
+    public LabelServiceImpl() {}
+
+    public LabelServiceImpl(LabelRepositoryImpl labelRepository) {
+        this.labelRepository = new LabelRepositoryImpl();
+    }
 
     @Override
     public Label getById(int id) {
